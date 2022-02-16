@@ -36,4 +36,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	//success.jsp에 접근할 수 있는 메서드를 생성
+	@RequestMapping(value = "/success", method = RequestMethod.GET)
+	public String success(Model model) {
+		String test = "내맘이거든요";
+		model.addAttribute("test", test);
+		return "success";
+	}
+	
 }
