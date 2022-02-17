@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원가입이 정상적으로 처리되었습니다.</h2>
-	<a href="member_ex00">회원가입</a>
-	<a href="member_ex03">로그인</a> <!-- controller에서 화면구현 -->
+	<h2>${memberInfo.id}님이 로그인 중입니다.</h2>
 </body>
 </html>
