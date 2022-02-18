@@ -36,7 +36,7 @@ public class ScoreServiceController {
 	//점수 등록 메서드
 	@RequestMapping("scoreForm")
 	public String scoreForm(ScoreVO vo) {
-		scoreService.scoreRegist(vo); //점수 등록 진해
+		scoreService.scoreRegist(vo); //점수 등록 진행
 		return "service/2scoreResult"; //뷰리졸버를 통해서 강제이동
 	}
 	
