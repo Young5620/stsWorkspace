@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>${memberInfo.id}님이 로그인 중입니다.</h2>
+
+
+	<h2>${memberInfo.id}님이 로그인 중입니다. </h2>
+	
+
+
+
 </body>
 </html>

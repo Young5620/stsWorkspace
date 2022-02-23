@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<!-- namespace속성에는 사용할 맵퍼의 인터페이스를 경로지정 -->
+<mapper namespace="com.zerock.board.mapper.BoardMapper">
+<!-- id속성에는 매퍼인터페이스 -->
+
+<!-- 게시글 가져오기 -->
+<select id="getList" resultType="com.zerock.board.command.BoardVO">
+	select * from tbl_board order by num desc
+</select>
+
+<!-- 게시물 등록 -->
+<insert id="insertBoard">
+	insert into tbl_board (title,content,writer)
+		values (#{title},#{content},#{writer})
+</insert>
+
+<!-- 게시물 내용 가져오기 -->
+<select id="getContent">
+</select>
+
+<!-- 게시물 수정하기 -->
+<update id="updateBoard">
+</update>
+
+<!-- 게시물 삭제하기 -->
+<delete id="deleteBoard">
+</delete>
+</mapper>

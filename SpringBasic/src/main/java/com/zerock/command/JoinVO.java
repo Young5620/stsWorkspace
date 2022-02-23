@@ -1,20 +1,19 @@
 package com.zerock.command;
 
 public class JoinVO {
-	String id;
-	String pw;
+
+	
+	String id; 
+	String pw; 
 	String name;
-	String email;
+	
+	public JoinVO()  { }
 
-	public JoinVO() {
-
-	}
-
-	public JoinVO(String id, String pw, String name, String email) {
+	public JoinVO(String id, String pw, String name) {
+		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
-		this.email = email;
 	}
 
 	public String getId() {
@@ -40,14 +39,8 @@ public class JoinVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
+	
 	
 	
 }

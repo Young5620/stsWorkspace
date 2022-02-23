@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원가입이 정상적으로 처리되었습니다.</h2>
-	<a href="member_ex00">회원가입</a>
-	<a href="member_ex03">로그인</a> <!-- controller에서 화면구현 -->
+
+	<h2>회원가입이 정상적으로 처리되었습니다</h2>
+	<a href="member_ex00">회원가입 하러가기</a>
+	<a href="member_ex03">로그인하기</a> <!-- 컨트롤러 화면구현 -->
+
+
 </body>
 </html>

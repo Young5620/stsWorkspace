@@ -1,11 +1,12 @@
 package com.zerock.command;
 
 public class ScoreVO {
-	int num;
-	String name;
-	String kor;
-	String eng;
-	String math;
+
+	int num; 
+	String name; 
+	String kor; 
+	String eng; 
+	String math; 
 	
 	public ScoreVO() {}
 
@@ -56,6 +57,7 @@ public class ScoreVO {
 	public void setMath(String math) {
 		this.math = math;
 	}
+	
 	
 	
 	

@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>게시글 등록이 완료되었습니다.</h2>
-	<a href="boardRegister">추가 작성하기</a>
-	<a href="boardList">게시글 목록</a>
+<h2>게시글 등록이 완료되었습니다.</h2>
+<a href="boardRegister">추가작성하기</a>
+<a href="boardList">게시글 리스트</a>
+
+
+
 </body>
 </html>

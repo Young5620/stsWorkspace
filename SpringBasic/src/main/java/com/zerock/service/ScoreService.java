@@ -6,7 +6,9 @@ import com.zerock.command.ScoreVO;
 
 public interface ScoreService {
 	
-	public void scoreRegist(ScoreVO dao); //점수 등록
-	public ArrayList<ScoreVO> scoreResult(); //점수 결과
-	public void scoreDelete(String num); //점수 삭제
+	public void scoreRegist(ScoreVO vo);     //점수 등록
+	public ArrayList<ScoreVO> scoreResult();  //점수 결과
+	public void scoreDelete(String num);	  //점수 삭제
+
+	
 }

@@ -10,6 +10,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<a href="service/boardRegister">Board</a>
+
+<a href="service/boardRegister">board</a>
 </body>
 </html>

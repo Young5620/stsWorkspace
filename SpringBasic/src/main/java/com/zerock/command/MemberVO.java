@@ -1,13 +1,13 @@
 package com.zerock.command;
 
 public class MemberVO {
-	String id;
-	String pw;
-	String name;
+
+	//기본 생성자
+	String id; 
+	String pw; 
+	String name; 
 	
-	public MemberVO() {
-		super();
-	}
+	public MemberVO()  { }
 
 	public MemberVO(String id, String pw, String name) {
 		super();
@@ -38,7 +38,9 @@ public class MemberVO {
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	} 
+	
+	
 	
 	
 	

@@ -1,20 +1,21 @@
 package com.zerock.command;
 
 public class BoardVO {
-	int num;
-	String name;
-	String title;
-	String content;
 
-	public BoardVO() {}
+	private int num; 
+	private String name; 
+	private String title; 
+	private String content; 
+	
+	public BoardVO() { } //별 의미 없지만 오류발생방지 
 
-	public BoardVO(int num, String name, String title, String content) {
-		this.num = num;
+	//num은 삭제, num은 자체적으로 만들지 전달받아 처리하지 않기 때문 
+	public BoardVO(String name, String title, String content) {
+		super();
 		this.name = name;
 		this.title = title;
 		this.content = content;
 	}
-	
 
 	public int getNum() {
 		return num;
@@ -47,4 +48,10 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
+	
+	
+	
+	
 }

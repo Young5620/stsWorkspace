@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>점수등록 완료</h2>
+	<h2>점수 등록 완료</h2>
 	<a href="1scoreRegister">점수 등록하러 가기</a>
-	<a href="3scoreList">등록 결과 보러가기</a><!-- 결과를 보여주는 뷰 -->
+	<a href="3scoreList">등록 결과 보러 가기</a>   <!--결과를 보여 주  뷰 -->
+
 </body>
 </html>

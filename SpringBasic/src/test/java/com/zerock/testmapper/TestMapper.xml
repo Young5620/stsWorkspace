@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--위 설정을 추가-->
+<mapper namespace="com.zerock.testmapper.TestMapper">
+	<select id= "getTime" resultType="String"> 
+		SELECT SYSDATE FROM DUAL
+	</select>
+	
+	<select id="select" resultType="com.zerock.command.ScoreVO" >
+		SELECT * FROM SCORE01
+	</select>
+	
+	<insert id="insert"> <!--boolean이니까 resultType을 안받아도됨 -->
+		INSERT INTO SCORE01(NAME,KOR,ENG,MATH) VALUES (#{name},#{kor},#{eng},#{math})
+	
+	 </insert> 
+ 	
+ 	<insert id="insert2">
+ 		INSERT INTO SCORE01(NAME,KOR,ENG,MATH) VALUES (#{p1},#{p2},#{p3},#{p4})
+ 	</insert>
+ 	
+</mapper>
+
