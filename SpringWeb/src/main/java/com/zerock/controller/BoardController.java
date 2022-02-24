@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.zerock.board.command.BoardVO;
 import com.zerock.board.service.BoardService;
@@ -63,6 +64,41 @@ public class BoardController {
 		model.addAttribute("boardlist",list);
 		
 		return "board/list";
+	}
+	
+	//게시글 내용보기
+	@RequestMapping("/content")
+	public String content(@RequestParam("num") int num, Model model) {
+		System.out.println("======controller계층======");
+		System.out.println(num);
+		BoardVO vo = service.getContent(num);
+		model.addAttribute("board", vo);
+		return "board/content";
+	}
+	
+	//게시글 수정 화면으로 가기
+	@RequestMapping("/modify")
+	public String modify(@RequestParam("num") int num, Model model) {
+		BoardVO vo = service.getContent(num);
+		model.addAttribute("board", vo);
+		return "board/modify";
+	}
+	
+	//게시글 수정 완료 처리
+	@RequestMapping("/update")
+	public String update(BoardVO vo) {
+		System.out.println("=====컨트롤 계층=====");
+		System.out.println(vo.getNum());
+		System.out.println(vo.getTitle());
+		System.out.println(vo.getContent());
+		
+		//문제
+		//1. service 계층에 전달받은 폼값은 전달하는 update(vo)를 생성
+		//2. update()메서드 안에서 mybatis로 연결하는 BoardUpdate(vo) 메서드를 새성
+		//3. 동작하여 업데이트 진행~
+		service.update(vo);
+		
+		return "redirect:/board/list";
 	}
 	
 }

@@ -45,7 +45,8 @@
 						<tbody>	
 							<tr>
 								<td>${good.num }</td>
-								<td>${good.title }</td>
+								<!-- 상세페이지로 이동 -->
+								<td><a href="content?num=${good.num }">${good.title }</a></td>
 								<td>${good.writer }</td>
 								<td>
 									<fmt:formatDate value="${good.regdate }" pattern="yyyy-MM-dd hh:mm:ss"/>

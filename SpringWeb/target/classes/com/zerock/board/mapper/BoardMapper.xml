@@ -19,11 +19,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </insert>
 
 <!-- 게시물 내용 가져오기 -->
-<select id="getContent">
+<!-- parameterType속성 : 구문에 전달될 타입 -->
+<select id="getContent" parameterType="int" resultType="com.zerock.board.command.BoardVO">
+	select * from tbl_board where num = #{num}
 </select>
 
 <!-- 게시물 수정하기 -->
-<update id="updateBoard">
+<update id="updateBoard" parameterType="com.zerock.board.command.BoardVO">
+	update tbl_board set 
+	title=#{title}, 
+	content=#{content}, 
+	writer=#{writer},
+	updatedate=sysdate 
+	where num=#{num}
 </update>
 
 <!-- 게시물 삭제하기 -->

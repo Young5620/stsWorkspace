@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- root-context.xml에는 일반적으로 DB관련 설정이 들어간다 -->
+	<!-- 기본적으로 classpath에 경로를 WEB-INF아래 classes폴더 경로를 잡도록 설정되어있습니다. -->
+	<!-- DB설정 파일을 작성한다면,classes 폴더경로를 기준으로 경로설정을 하도록 합니다. -->
+	
+	<!-- Hikari CP 빈으로 등록하기 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"></property>
+		<property name="username" value="mytest"></property>
+		<property name="password" value="mytest"></property>	
+	</bean>
+		
+	<!-- DataSource설정  -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<!-- jdbcTemplate 사용, Hikari ds를 참조하는 bean생성-->
+	<!-- jdbcTemplate 이름으로 객체를 생성하면서 의존주입(HikariCP설정으로 생성된 ds) -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"> </property>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	 	<property name="dataSource" ref="dataSource"></property>
+	 </bean> 
+	 
+	 <!-- Mybatis의 맵퍼 패키지를 스캔하는 태그를 작성 -->
+	 <mybatis-spring:scan base-package="com.zerock.mapper"/>
+	
+
+		
+</beans>

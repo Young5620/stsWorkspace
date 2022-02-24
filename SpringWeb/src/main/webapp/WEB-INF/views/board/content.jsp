@@ -25,29 +25,27 @@
 
           <div class="form-group">
             <label>번호</label>
-            <input class="form-control" readonly="readonly"><!-- 읽기만 가능 readonly속성 -->
+            <input class="form-control" name="num" value="${board.num}" readonly="readonly"><!-- 읽기만 가능 readonly속성 -->
           </div>
           
           <div class="form-group">
             <label>제목</label>
-            <input class="form-control" readonly="readonly">
+            <input class="form-control" name="title" value="${board.title }" readonly="readonly">
           </div>
 
           <div class="form-group">
             <label>내용</label>
-            <textarea class="form-control" rows="5" readonly="readonly"></textarea>
+            <textarea class="form-control" name="content" rows="5" readonly="readonly">${board.content }</textarea>
           </div>
 
           <div class="form-group">
             <label>작성자</label>
-            <input class="form-control" readonly="readonly">
+            <input class="form-control" name="writer" value="${board.writer }" readonly="readonly">
           </div>
           
-          <button type="button" class="btn btn-primary">변경</button>
-          <button type="button" class="btn btn-dark">목록</button>
-  
-
-
+          <button type="button" class="btn btn-primary" onclick="location.href='modify?num=${board.num}'">변경</button>
+          <button type="button" class="btn btn-dark" onclick="location.href='list'">목록</button> 
+          
 
       </div>
       <!--  end card-body -->

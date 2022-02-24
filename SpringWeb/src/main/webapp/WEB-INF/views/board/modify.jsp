@@ -25,33 +25,33 @@
 
 
 
-        <form role="form" action="##############" method="post">
+        <form role="form" action="update" method="post">
           
           <div class="form-group">
             <label>번호</label>
-            <input class="form-control" name='##############'>
+            <input class="form-control" name="num" value="${board.num }" readonly>
           </div>
           
           <div class="form-group">
             <label>제목</label>
-            <input class="form-control" name='##############'>
+            <input class="form-control" name="title" value="${board.title }">
           </div>
 
           <div class="form-group">
             <label>내용</label>
-            <textarea class="form-control" rows="5" name='##############'></textarea>
+            <textarea class="form-control" rows="5" name="content">${board.content }</textarea>
           </div>
 
           <div class="form-group">
             <label>작성자</label>
-            <input class="form-control" name='##############'>
+            <input class="form-control" name="writer" value="${board.writer }">
           </div>
           
           
           
           <button type="submit" class="btn btn-primary">변경</button>
-          <button type="button" class="btn btn-secondary">삭제</button>
-          <button type="button" class="btn btn-dark">목록</button>
+          <button type="button" class="btn btn-secondary" onclick="location.href='delete?num=${board.num}'">삭제</button>
+          <button type="button" class="btn btn-dark" onclick="location.href='list'">목록</button>
         </form>
 
 
@@ -66,5 +66,8 @@
 <!-- /.row -->
 
 <%@ include file="../include/footer.jsp" %>
+<script>
+if()
+</script>
 </body>
 </html>

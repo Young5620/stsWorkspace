@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0// EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace= "com.zerock.mapper.ScoreMapper">
+	<insert id="insert">
+	INSERT INTO testtable (name,kor,eng,math) VALUES (#{name},#{kor},#{eng},#{math})	
+	</insert>
+	
+	<insert id="insert2">
+	INSERT INTO testtable (NAME,KOR,ENG,MATH) VALUES (#{p1},#{p2},#{p3},#{p4})	
+	</insert>
+	
+	<select id="select" resultType="com.zerock.command.ScoreVO"> 
+	SELECT * FROM testtable ORDER BY NUM
+	</select>
+	
+	<delete id="delete"> 
+	DELETE FROM testtable WHERE NUM = #{NUM} 
+	</delete>
+	
+	
+	
+	
+
+
+</mapper>

@@ -36,13 +36,21 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVO getContent(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		//mybatis의 맵퍼를 확인
+		BoardVO vo = mapper.getContent(num);
+		System.out.println("======service계층======");
+		System.out.println(vo.getNum());
+		System.out.println(vo.getTitle());
+		System.out.println(vo.getContent());
+		return vo;
 	}
 
 	@Override
 	public void update(BoardVO vo) {
-		// TODO Auto-generated method stub
+		
+		boolean bool = mapper.updateBoard(vo);
+		System.out.println("성공? 실패?" + bool);
+		
 
 	}
 
