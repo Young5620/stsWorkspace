@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zerock.board.command.BoardVO;
+import com.zerock.board.command.Criteria;
 import com.zerock.board.mapper.BoardMapper;
 
 //Service
@@ -18,11 +19,28 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	private BoardMapper mapper;
+//	//게시글리스트
+//	@Override
+//	public ArrayList<BoardVO> getList() {
+//		ArrayList<BoardVO>  list = mapper.getList();
+//		return list;
+//	}
 	
+	//페이징 게시글 리스트
 	@Override
-	public ArrayList<BoardVO> getList() {
-		ArrayList<BoardVO>  list = mapper.getList();
+	public ArrayList<BoardVO> pagingList(Criteria cri) {
+		
+		//cri값을 전달하여 받아처리하는 DAO..가 필요
+		ArrayList<BoardVO> list =  mapper.pagingList(cri);
+		
 		return list;
+	}
+	
+	//전체 게시물수
+	@Override
+	public int getTotal() {
+		int total = mapper.getTotal();
+		return total;
 	}
 
 	@Override
@@ -56,8 +74,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
-
+		mapper.deleteBoard(num);
 	}
 
 }

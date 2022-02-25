@@ -43,8 +43,12 @@
             <input class="form-control" name="writer" value="${board.writer }" readonly="readonly">
           </div>
           
-          <button type="button" class="btn btn-primary" onclick="location.href='modify?num=${board.num}'">변경</button>
-          <button type="button" class="btn btn-dark" onclick="location.href='list'">목록</button> 
+          <!-- 페이징 -->
+          <!-- 9. 취소버튼에 pageNum, count를 가지고 이동하도록 처리 -->
+          <!-- 10. 변경버튼에 pageNum, count를 가지ㄷ고 이동하도록 처리 -->
+          <!-- 11. 변경후 Controller에 modify 요청에 대한 처리를 확인 -->
+          <button type="button" class="btn btn-primary" onclick="location.href='modify?num=${board.num}&pageNum=${cri.pageNum}&count=${cri.count }'">변경</button>
+          <button type="button" class="btn btn-dark" onclick="location.href='list?pageNum=${cri.pageNum}&count=${cri.count }'">목록</button> 
           
 
       </div>

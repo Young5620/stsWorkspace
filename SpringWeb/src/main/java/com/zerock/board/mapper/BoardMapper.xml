@@ -35,6 +35,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </update>
 
 <!-- 게시물 삭제하기 -->
-<delete id="deleteBoard">
+<delete id="deleteBoard" parameterType="int">
+	delete from tbl_board where num=#{num}
 </delete>
+
+<!-- 페이징 -->
+<select id="pagingList" parameterType="com.zerock.board.command.Criteria" 
+resultType="com.zerock.board.command.BoardVO">
+	<![CDATA[
+	select * from 
+	(select rownum rnum, B.* from tbl_board B
+	where rownum <= #{count_oracle} order by num desc)
+	where #{pageStart}<=rnum]]>
+</select>
+
+<select id="getTotal" resultType="int">
+	select count(*) as total from tbl_board
+</select>
 </mapper>
